@@ -13,8 +13,8 @@ is deliberately modest: a numeric score vector designed to be handed to
 as `distance`, to
 [`WeightIt::weightit()`](https://ngreifer.github.io/WeightIt/reference/weightit.html)
 as `ps`, or to
-[`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html) as an
-appended candidate.
+[`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html)
+as an appended candidate.
 
 ## Usage
 
@@ -78,8 +78,8 @@ oal(
   weights used inside the wAMD criterion and returned in `weights`. The
   ATE default is Shortreed and Ertefaie's wAMD weighting and
   deliberately differs from
-  [`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html)'s ATT
-  default.
+  [`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html)'s
+  ATT default.
 
 - family:
 
@@ -158,8 +158,8 @@ oal(
   Length-2 numeric: propensity scores are clipped to
   `[clip[1], clip[2]]` BEFORE the wAMD IPW weights are formed and in the
   returned `ps` (default `c(0.01, 0.99)`, equal to
-  [`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html)'s default
-  so that psave's re-clipping is a no-op). The default is a
+  [`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html)'s
+  default so that psave's re-clipping is a no-op). The default is a
   Shortreed-Ertefaie-lineage safety choice; Balde's official reference
   code runs UNCLIPPED weights (`1/e`, `1/(1 - e)` with no truncation).
   To reproduce that behavior, effectively disable clipping with

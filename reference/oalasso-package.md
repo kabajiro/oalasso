@@ -11,8 +11,8 @@ be supplied directly to
 as a distance measure, to
 [`WeightIt::weightit()`](https://ngreifer.github.io/WeightIt/reference/weightit.html)
 as a propensity score, or to
-[`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html) as an
-appended candidate.
+[`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html)
+as an appended candidate.
 
 ## Details
 

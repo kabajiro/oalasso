@@ -44,8 +44,8 @@ vector of propensity scores, ready for
 as a distance measure,
 [`WeightIt::weightit()`](https://ngreifer.github.io/WeightIt/reference/weightit.html)
 as a propensity score, or
-[`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html) as an
-appended candidate.
+[`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html)
+as an appended candidate.
 
 ## Installation
 
@@ -457,8 +457,8 @@ fit.goal <- oal(treat ~ age + educ + race + married + nodegree + re74 + re75,
 
 - [`vignette("psave-integration", package = "oalasso")`](https://kabajiro.github.io/oalasso/articles/psave-integration.md)
   — appending the OAL score as a candidate in
-  [`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html), when
-  that composition helps, and its caveats.
+  [`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html),
+  when that composition helps, and its caveats.
 - [`vignette("method-details", package = "oalasso")`](https://kabajiro.github.io/oalasso/articles/method-details.md)
   — all formulas, the exact `glmnet` penalty-scale correction, the
   provenance of every default, differences from the author’s legacy

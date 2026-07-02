@@ -69,7 +69,7 @@ instruments and noise variables – are excluded from the propensity score
 model. Tuning parameters are selected by the papers' weighted absolute mean
 difference (wAMD) balance criterion. The result is deliberately modest: a
 numeric score vector designed to be handed to <code><a href="https://kosukeimai.github.io/MatchIt/reference/matchit.html" class="external-link">MatchIt::matchit()</a></code> as
-<code>distance</code>, to <code><a href="https://ngreifer.github.io/WeightIt/reference/weightit.html" class="external-link">WeightIt::weightit()</a></code> as <code>ps</code>, or to <code><a href="https://rdrr.io/pkg/psAve/man/psave.html" class="external-link">psAve::psave()</a></code> as an
+<code>distance</code>, to <code><a href="https://ngreifer.github.io/WeightIt/reference/weightit.html" class="external-link">WeightIt::weightit()</a></code> as <code>ps</code>, or to <code><a href="https://kabajiro.github.io/psAve/reference/psave.html" class="external-link">psAve::psave()</a></code> as an
 appended candidate.</p>
     </div>
 
@@ -134,7 +134,7 @@ stability under correlated covariates and near-positivity violations).</p></dd>
 <dd><p><code>"ATE"</code> (default) or <code>"ATT"</code>; determines the
 inverse-probability weights used inside the wAMD criterion and returned
 in <code>weights</code>. The ATE default is Shortreed and Ertefaie's wAMD weighting
-and deliberately differs from <code><a href="https://rdrr.io/pkg/psAve/man/psave.html" class="external-link">psAve::psave()</a></code>'s ATT default.</p></dd>
+and deliberately differs from <code><a href="https://kabajiro.github.io/psAve/reference/psave.html" class="external-link">psAve::psave()</a></code>'s ATT default.</p></dd>
 
 
 <dt id="arg-family">family<a class="anchor" aria-label="anchor" href="#arg-family"></a></dt>
@@ -210,7 +210,7 @@ never a silent fallback.</p></dd>
 <dt id="arg-clip">clip<a class="anchor" aria-label="anchor" href="#arg-clip"></a></dt>
 <dd><p>Length-2 numeric: propensity scores are clipped to
 <code>[clip[1], clip[2]]</code> BEFORE the wAMD IPW weights are formed and in the
-returned <code>ps</code> (default <code>c(0.01, 0.99)</code>, equal to <code><a href="https://rdrr.io/pkg/psAve/man/psave.html" class="external-link">psAve::psave()</a></code>'s
+returned <code>ps</code> (default <code>c(0.01, 0.99)</code>, equal to <code><a href="https://kabajiro.github.io/psAve/reference/psave.html" class="external-link">psAve::psave()</a></code>'s
 default so that psave's re-clipping is a no-op). The default is a
 Shortreed-Ertefaie-lineage safety choice; Balde's official reference
 code runs UNCLIPPED weights (<code>1/e</code>, <code>1/(1 - e)</code> with no truncation).

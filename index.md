@@ -36,8 +36,8 @@ scores: `fit$ps` drops into
 as a distance measure,
 [`WeightIt::weightit()`](https://ngreifer.github.io/WeightIt/reference/weightit.html)
 as a propensity score, or
-[`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html) as an
-appended candidate; thin
+[`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html)
+as an appended candidate; thin
 [`oal_match()`](https://kabajiro.github.io/oalasso/reference/oal_match.md)
 /
 [`oal_weight()`](https://kabajiro.github.io/oalasso/reference/oal_weight.md)
@@ -79,8 +79,8 @@ cobalt::bal.tab(fit)                           # balance with the selected weigh
 - [Using oalasso with
   psAve](https://kabajiro.github.io/oalasso/vignettes/psave-integration.Rmd)
   — appending the OAL score as a candidate in
-  [`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html), when the
-  composition helps, and its caveats.
+  [`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html),
+  when the composition helps, and its caveats.
 - [Method details and
   provenance](https://kabajiro.github.io/oalasso/vignettes/method-details.Rmd)
   — all formulas, the exact glmnet penalty-scale correction, the

@@ -13,11 +13,11 @@ score (PS) analysis:
   unmeasured-confounding bias (Brookhart et al. 2006; Myers et
   al. 2011).
 - **Which model form?**
-  [`psAve::psave()`](https://rdrr.io/pkg/psAve/man/psave.html) (Kabata,
-  Stuart & Shintani 2024) averages candidate PS models of different
-  functional forms (logistic regression, CART, random forest, gradient
-  boosting, …), with convex mixing weights selected by balance on the
-  prognostic score.
+  [`psAve::psave()`](https://kabajiro.github.io/psAve/reference/psave.html)
+  (Kabata, Stuart & Shintani 2024) averages candidate PS models of
+  different functional forms (logistic regression, CART, random forest,
+  gradient boosting, …), with convex mixing weights selected by balance
+  on the prognostic score.
 
 The two compose cleanly because both packages speak the same minimal
 contract: a propensity score is a plain numeric vector of length $`n`$,

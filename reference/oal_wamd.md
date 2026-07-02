@@ -7,7 +7,7 @@ its tuning parameters. This function is the package's **single source of
 truth** for the criterion: the internal grid search calls it verbatim,
 and exporting it lets any candidate score – from any package – be scored
 on the same yardstick (the mirror of
-[`psAve::psave_criteria()`](https://rdrr.io/pkg/psAve/man/psave_criteria.html)).
+[`psAve::psave_criteria()`](https://kabajiro.github.io/psAve/reference/psave_criteria.html)).
 
 ## Usage
 
