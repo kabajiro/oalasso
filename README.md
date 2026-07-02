@@ -1,0 +1,80 @@
+# oalasso
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml)
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/oalasso)](https://CRAN.R-project.org/package=oalasso) -->
+<!-- badges: end -->
+
+**Outcome-adaptive lasso propensity scores — published methods, exactly.**
+
+`oalasso` implements the outcome-adaptive lasso (OAL) of Shortreed & Ertefaie (2017) and the generalized outcome-adaptive lasso (GOAL) of Baldé, Yang & Lefebvre (2023) for propensity score estimation. OAL fits a logistic propensity score model with an adaptively weighted lasso penalty whose weights come from an *outcome* regression: covariates unrelated to the outcome — **instruments** and noise variables — receive an exploding penalty and are excluded, while confounders and outcome predictors are retained. Excluding instruments from a propensity score model improves precision and avoids bias amplification under unmeasured confounding (Brookhart et al. 2006; Myers et al. 2011). Tuning is by the weighted absolute mean difference (wAMD) balance criterion, and `method = "goal"` adds Baldé's elastic-net ridge term for correlated covariates and fragile positivity.
+
+Fidelity is the package's identity. The solver is `glmnet` with an exact, KKT-verified penalty-scale correction, so the *published* objectives and tuning grids (Shortreed & Ertefaie's $\lambda_n = n^\delta$ grid with paired $\gamma$) are reproduced rather than silently reinterpreted by glmnet's internal penalty-factor rescaling. Every fit prints a provenance line stating exactly which published method it implements — and flags anything that goes beyond the validated territory. The pipeline is fully deterministic (no seed needed).
+
+`oalasso` is the second package of a suite with [psAve](https://github.com/kabajiro/psAve), and a companion to the [MatchIt](https://kosukeimai.github.io/MatchIt/)/[WeightIt](https://ngreifer.github.io/WeightIt/)/[cobalt](https://ngreifer.github.io/cobalt/) ecosystem. The deliverable is a plain numeric vector of propensity scores: `fit$ps` drops into `MatchIt::matchit()` as a distance measure, `WeightIt::weightit()` as a propensity score, or `psAve::psave()` as an appended candidate; thin `oal_match()` / `oal_weight()` wrappers do this without retyping the formula, and `cobalt::bal.tab()` works on the fitted object directly. Effect estimation stays where it belongs, in `MatchIt`/`WeightIt`/`survey`/`marginaleffects`.
+
+## Installation
+
+```r
+# install.packages("remotes")
+remotes::install_github("kabajiro/oalasso")
+```
+
+## Quick example
+
+```r
+library(oalasso)
+data("lalonde", package = "MatchIt")
+
+fit <- oal(treat ~ age + educ + race + married + nodegree + re74 + re75,
+           data = lalonde, outcome = ~ re78)   # OAL, wAMD-tuned; deterministic
+fit          # provenance, retained vs excluded covariates, and the literal next call
+
+m <- oal_match(fit, method = "nearest")        # a genuine matchit object
+w <- oal_weight(fit)                           # a genuine weightit object
+cobalt::bal.tab(fit)                           # balance with the selected weights
+```
+
+## Learn more
+
+* [Getting Started with oalasso](vignettes/oalasso.Rmd) — what OAL selects and why, the three-line matching and weighting workflows, how the wAMD tuning works, and how to read the output.
+* [Using oalasso with psAve](vignettes/psave-integration.Rmd) — appending the OAL score as a candidate in `psAve::psave()`, when the composition helps, and its caveats.
+* [Method details and provenance](vignettes/method-details.Rmd) — all formulas, the exact glmnet penalty-scale correction, the provenance of every default, differences from the author's legacy code, relation to other software, and honest notes on nonlinear extensions.
+
+## Citation
+
+If you use `oalasso`, please cite the methods it implements, and the package:
+
+> Shortreed, S. M., & Ertefaie, A. (2017). Outcome-adaptive lasso: Variable selection for causal inference. *Biometrics*, 73(4), 1111–1122. doi:[10.1111/biom.12679](https://doi.org/10.1111/biom.12679)
+
+> Baldé, I., Yang, Y. A., & Lefebvre, G. (2023). Reader reaction to "Outcome-adaptive lasso: Variable selection for causal inference" by Shortreed and Ertefaie (2017). *Biometrics*, 79(1), 514–520. doi:[10.1111/biom.13683](https://doi.org/10.1111/biom.13683) *(when `method = "goal"` is used)*
+
+> Kabata, D. (2026). oalasso: Outcome-Adaptive Lasso Propensity Scores. R package. https://github.com/kabajiro/oalasso (see `citation("oalasso")`)
+
+```bibtex
+@article{shortreed2017outcome,
+  author  = {Shortreed, Susan M. and Ertefaie, Ashkan},
+  title   = {Outcome-adaptive lasso: Variable selection for causal inference},
+  journal = {Biometrics},
+  year    = {2017},
+  volume  = {73},
+  number  = {4},
+  pages   = {1111--1122},
+  doi     = {10.1111/biom.12679}
+}
+
+@article{balde2023goal,
+  author  = {Bald{\'e}, Ismaila and Yang, Yi Archer and Lefebvre, Genevi{\`e}ve},
+  title   = {Reader reaction to ``Outcome-adaptive lasso: Variable selection for causal inference'' by Shortreed and Ertefaie (2017)},
+  journal = {Biometrics},
+  year    = {2023},
+  volume  = {79},
+  number  = {1},
+  pages   = {514--520},
+  doi     = {10.1111/biom.13683}
+}
+```
+
+## License
+
+GPL (>= 2)

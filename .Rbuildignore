@@ -1,0 +1,10 @@
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
+^.*\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^cran-comments\.md$
+^CRAN-SUBMISSION$
+^\.DS_Store$

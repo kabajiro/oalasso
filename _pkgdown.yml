@@ -1,0 +1,9 @@
+url: https://kabajiro.github.io/oalasso/
+template:
+  bootstrap: 5
+home:
+  title: "oalasso: Outcome-Adaptive Lasso Propensity Scores"
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
