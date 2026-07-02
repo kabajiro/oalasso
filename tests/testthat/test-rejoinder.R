@@ -13,20 +13,20 @@ test_that("oal() with all defaults reproduces the rejoinder recipe", {
                tolerance = 1e-12)
 
   # identical wAMD over the whole grid, in grid order
-  expect_equal(fit$path$wamd, ref$wamd, tolerance = 1e-10)
+  expect_equal(fit$path$wamd, ref$wamd, tolerance = 1e-8) # cross-BLAS headroom
 
   # identical selection
   expect_equal(unname(fit$lambda[["delta"]]), ref$delta)
   expect_equal(unname(fit$lambda[["gamma"]]), ref$gamma)
   expect_equal(unname(fit$lambda[["lambda.n"]]), ref$lambda.n)
-  expect_equal(fit$criterion.value, ref$criterion.value, tolerance = 1e-10)
+  expect_equal(fit$criterion.value, ref$criterion.value, tolerance = 1e-8) # cross-BLAS headroom
 
   # identical selected variable set
   got <- sort(fit$selected$term[fit$selected$selected])
   expect_identical(got, sort(ref$selected))
 
   # identical propensity scores
-  expect_equal(unname(fit$ps), unname(ref$ps), tolerance = 1e-10)
+  expect_equal(unname(fit$ps), unname(ref$ps), tolerance = 1e-8) # cross-BLAS headroom
 })
 
 test_that("per-grid-point selected sets match the rejoinder recipe", {
