@@ -37,9 +37,10 @@ cobalt::bal.tab(fit)                           # balance with the selected weigh
 
 ## Learn more
 
-* [Getting Started with oalasso](vignettes/oalasso.Rmd) — what OAL selects and why, the three-line matching and weighting workflows, how the wAMD tuning works, and how to read the output.
-* [Using oalasso with psAve](vignettes/psave-integration.Rmd) — appending the OAL score as a candidate in `psAve::psave()`, when the composition helps, and its caveats.
-* [Method details and provenance](vignettes/method-details.Rmd) — all formulas, the exact glmnet penalty-scale correction, the provenance of every default, differences from the author's legacy code, relation to other software, and honest notes on nonlinear extensions.
+* [Getting Started with oalasso](https://kabajiro.github.io/oalasso/articles/oalasso.html) — what OAL selects and why, the three-line matching and weighting workflows, how the wAMD tuning works, and how to read the output.
+* [Using oalasso with psAve](https://kabajiro.github.io/oalasso/articles/psave-integration.html) — appending the OAL score as a candidate in `psAve::psave()`, when the composition helps, and its caveats.
+* [Method details and provenance](https://kabajiro.github.io/oalasso/articles/method-details.html) — all formulas, the exact glmnet penalty-scale correction, the provenance of every default, differences from the author's legacy code, relation to other software, and honest notes on nonlinear extensions.
+* Full documentation: https://kabajiro.github.io/oalasso/
 
 ## Citation
 
