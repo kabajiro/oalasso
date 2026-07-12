@@ -1,9 +1,10 @@
 # oalasso
 
-<!-- badges: start -->
 [![R-CMD-check](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml)
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/oalasso)](https://CRAN.R-project.org/package=oalasso) -->
-<!-- badges: end -->
+<!-- Enable after CRAN acceptance (badge endpoint 404s for unpublished packages):
+[![CRAN status](https://www.r-pkg.org/badges/version/oalasso)](https://CRAN.R-project.org/package=oalasso)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/oalasso)](https://CRAN.R-project.org/package=oalasso)
+-->
 
 **Outcome-adaptive lasso propensity scores — published methods, exactly.**
 
