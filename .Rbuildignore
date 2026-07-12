@@ -6,5 +6,6 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^cran-comments\.md$
+^data-raw$
 ^CRAN-SUBMISSION$
 ^\.DS_Store$
