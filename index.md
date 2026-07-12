@@ -1,5 +1,7 @@
 # oalasso
 
+[![R-CMD-check](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml)
+
 **Outcome-adaptive lasso propensity scores — published methods,
 exactly.**
 
