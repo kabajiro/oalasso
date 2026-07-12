@@ -13,7 +13,6 @@
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="oalasso: Outcome-Adaptive Lasso Propensity Scores">
 <meta name="description" content="Estimates propensity scores by the outcome-adaptive lasso of Shortreed and Ertefaie (2017) &lt;doi:10.1111/biom.12679&gt; and the generalized outcome-adaptive lasso (GOAL) of Balde, Yang and Lefebvre (2023) &lt;doi:10.1111/biom.13683&gt;, using glmnet with an exact penalty-scale correction so that the published objectives and tuning grids are reproduced. Tuning is by the weighted absolute mean difference balance criterion. The resulting score is designed to be supplied directly to the matchit() function of MatchIt as a distance measure, to the weightit() function of WeightIt as a propensity score, or to the psave() function of psAve as an appended candidate.">
 <meta property="og:description" content="Estimates propensity scores by the outcome-adaptive lasso of Shortreed and Ertefaie (2017) &lt;doi:10.1111/biom.12679&gt; and the generalized outcome-adaptive lasso (GOAL) of Balde, Yang and Lefebvre (2023) &lt;doi:10.1111/biom.13683&gt;, using glmnet with an exact penalty-scale correction so that the published objectives and tuning grids are reproduced. Tuning is by the weighted absolute mean difference balance criterion. The resulting score is designed to be supplied directly to the matchit() function of MatchIt as a distance measure, to the weightit() function of WeightIt as a propensity score, or to the psave() function of psAve as an appended candidate.">
-<meta property="og:image" content="https://kabajiro.github.io/oalasso/logo.png">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -56,10 +55,8 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="oalasso-">oalasso <a class="anchor" aria-label="anchor" href="#oalasso-"></a>
-</h1>
-</div>
+<div class="page-header"><h1 id="oalasso">oalasso<a class="anchor" aria-label="anchor" href="#oalasso"></a>
+</h1></div>
 <p><a href="https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <!-- Enable after CRAN acceptance (badge endpoint 404s for unpublished packages):
 [![CRAN status](https://www.r-pkg.org/badges/version/oalasso)](https://CRAN.R-project.org/package=oalasso)
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/oalasso)](https://CRAN.R-project.org/package=oalasso)
