@@ -1,4 +1,4 @@
-# oalasso <img src="man/figures/logo.png" align="right" height="139" alt="oalasso hex logo" />
+# oalasso
 
 [![R-CMD-check](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml)
 <!-- Enable after CRAN acceptance (badge endpoint 404s for unpublished packages):
