@@ -3,13 +3,17 @@
 ## Test environments
 
 * local: macOS (Apple Silicon), R 4.5.0
+* local: Windows 11 x64, R 4.4.2
 * GitHub Actions: ubuntu-latest (R devel, release, oldrel-1),
   windows-latest (R release), macos-latest (R release)
 * win-builder: R Under development (unstable) (2026-06-29 r90199 ucrt)
 
 ## R CMD check results
 
-Local and GitHub Actions: 0 errors | 0 warnings | 0 notes.
+Local (macOS) and GitHub Actions: 0 errors | 0 warnings | 0 notes.
+Local (Windows): 0 errors | 0 warnings | 2 notes — "New submission"
+(expected) and "unable to verify current time" (a known local-clock
+check artifact, unrelated to the package).
 win-builder (R-devel): 0 errors | 0 warnings | 1 note —
 "checking CRAN incoming feasibility": New submission; possibly misspelled
 words in DESCRIPTION (Balde, Ertefaie, Lefebvre, Shortreed).
