@@ -7,7 +7,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/kabajiro/oalasso/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/kabajiro/oalasso/blob/v1.0.0/DESCRIPTION)
 
 Kabata D (2026). *oalasso: Outcome-Adaptive Lasso Propensity Scores*. R
 package version 1.0.0, <https://kabajiro.github.io/oalasso/>.
