@@ -60,10 +60,7 @@
 <img src="logo.png" class="logo" alt=""><h1 id="oalasso-">oalasso <a class="anchor" aria-label="anchor" href="#oalasso-"></a>
 </h1>
 </div>
-<p><a href="https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <!-- Enable after CRAN acceptance (badge endpoint 404s for unpublished packages):
-[![CRAN status](https://www.r-pkg.org/badges/version/oalasso)](https://CRAN.R-project.org/package=oalasso)
-[![CRAN downloads](https://cranlogs.r-pkg.org/badges/oalasso)](https://CRAN.R-project.org/package=oalasso)
---></p>
+<p><a href="https://CRAN.R-project.org/package=oalasso" class="external-link"><img src="https://www.r-pkg.org/badges/version/oalasso" alt="CRAN status"></a> <a href="https://CRAN.R-project.org/package=oalasso" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/oalasso" alt="CRAN downloads"></a> <a href="https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></p>
 <p><strong>Outcome-adaptive lasso propensity scores — published methods, exactly.</strong></p>
 <p><code>oalasso</code> implements the outcome-adaptive lasso (OAL) of Shortreed &amp; Ertefaie (2017) and the generalized outcome-adaptive lasso (GOAL) of Baldé, Yang &amp; Lefebvre (2023) for propensity score estimation. OAL fits a logistic propensity score model with an adaptively weighted lasso penalty whose weights come from an <em>outcome</em> regression: covariates unrelated to the outcome — <strong>instruments</strong> and noise variables — receive an exploding penalty and are excluded, while confounders and outcome predictors are retained. Excluding instruments from a propensity score model improves precision and avoids bias amplification under unmeasured confounding (Brookhart et al. 2006; Myers et al. 2011). Tuning is by the weighted absolute mean difference (wAMD) balance criterion, and <code>method = "goal"</code> adds Baldé’s elastic-net ridge term for correlated covariates and fragile positivity.</p>
 <p>Fidelity is the package’s identity. The solver is <code>glmnet</code> with an exact, KKT-verified penalty-scale correction, so the <em>published</em> objectives and tuning grids (Shortreed &amp; Ertefaie’s <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>n</mi></msub><mo>=</mo><msup><mi>n</mi><mi>δ</mi></msup></mrow><annotation encoding="application/x-tex">\lambda_n = n^\delta</annotation></semantics></math> grid with paired <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>) are reproduced rather than silently reinterpreted by glmnet’s internal penalty-factor rescaling. Every fit prints a provenance line stating exactly which published method it implements — and flags anything that goes beyond the validated territory. The pipeline is fully deterministic (no seed needed).</p>
@@ -72,7 +69,11 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<code class="sourceCode R"><span><span class="co"># From CRAN</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"oalasso"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Development version</span></span>
+<span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"kabajiro/oalasso"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -115,7 +116,7 @@
 <p>Baldé, I., Yang, Y. A., &amp; Lefebvre, G. (2023). Reader reaction to “Outcome-adaptive lasso: Variable selection for causal inference” by Shortreed and Ertefaie (2017). <em>Biometrics</em>, 79(1), 514–520. <a href="doi:%5B10.1111/biom.13683" class="uri">doi:[10.1111/biom.13683</a>](<a href="https://doi.org/10.1111/biom.13683" class="external-link uri">https://doi.org/10.1111/biom.13683</a>) <em>(when <code>method = "goal"</code> is used)</em></p>
 </blockquote>
 <blockquote>
-<p>Kabata, D. (2026). oalasso: Outcome-Adaptive Lasso Propensity Scores. R package. <a href="https://github.com/kabajiro/oalasso" class="external-link uri">https://github.com/kabajiro/oalasso</a> (see <code>citation("oalasso")</code>)</p>
+<p>Kabata, D. (2026). oalasso: Outcome-Adaptive Lasso Propensity Scores. R package version 1.0.0. <a href="https://CRAN.R-project.org/package=oalasso" class="external-link uri">https://CRAN.R-project.org/package=oalasso</a> (see <code>citation("oalasso")</code>)</p>
 </blockquote>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">shortreed2017outcome</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="dt">author</span>  = {Shortreed, Susan M. and Ertefaie, Ashkan},</span>
@@ -148,6 +149,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=oalasso" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/kabajiro/oalasso/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/kabajiro/oalasso/issues" class="external-link">Report a bug</a></li>
 </ul>

@@ -1,5 +1,9 @@
 # oalasso
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/oalasso)](https://CRAN.R-project.org/package=oalasso)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/oalasso)](https://CRAN.R-project.org/package=oalasso)
 [![R-CMD-check](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml)
 
 **Outcome-adaptive lasso propensity scores — published methods,
@@ -52,6 +56,10 @@ belongs, in `MatchIt`/`WeightIt`/`survey`/`marginaleffects`.
 
 ``` r
 
+# From CRAN
+install.packages("oalasso")
+
+# Development version
 # install.packages("remotes")
 remotes::install_github("kabajiro/oalasso")
 ```
@@ -108,8 +116,8 @@ package:
 > *(when `method = "goal"` is used)*
 
 > Kabata, D. (2026). oalasso: Outcome-Adaptive Lasso Propensity Scores.
-> R package. <https://github.com/kabajiro/oalasso> (see
-> `citation("oalasso")`)
+> R package version 1.0.0. <https://CRAN.R-project.org/package=oalasso>
+> (see `citation("oalasso")`)
 
 ``` bibtex
 @article{shortreed2017outcome,

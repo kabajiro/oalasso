@@ -38,7 +38,7 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="1.0.0" id="oalasso-100">oalasso 1.0.0<a class="anchor" aria-label="anchor" href="#oalasso-100"></a></h2>
+<h2 class="pkg-version" data-toc-text="1.0.0" id="oalasso-100">oalasso 1.0.0<a class="anchor" aria-label="anchor" href="#oalasso-100"></a></h2><p class="text-muted">CRAN release: 2026-07-21</p>
 <p>Initial release, implementing the outcome-adaptive lasso of Shortreed &amp; Ertefaie (2017), <em>Biometrics</em> 73(4):1111–1122, <a href="doi:10.1111/biom.12679" class="uri">doi:10.1111/biom.12679</a>, and the generalized outcome-adaptive lasso (GOAL) of Baldé, Yang &amp; Lefebvre (2023), <em>Biometrics</em> 79(1):514–520, <a href="doi:10.1111/biom.13683" class="uri">doi:10.1111/biom.13683</a>.</p>
 <ul><li>
 <code><a href="../reference/oal.html">oal()</a></code>: outcome-adaptive lasso propensity scores. Adaptive penalty weights <code>|b_j|^-gamma</code> from an unpenalized outcome model <code>Y ~ A + X</code> on the full sample (<code><a href="https://rdrr.io/r/stats/family.html" class="external-link">gaussian()</a></code> validated; <code><a href="https://rdrr.io/r/stats/family.html" class="external-link">binomial()</a></code> allowed with a one-time warning, GLM theory per Baldé 2025, <a href="doi:10.1016/j.spl.2025.110379" class="uri">doi:10.1016/j.spl.2025.110379</a>); tuning over Shortreed &amp; Ertefaie’s exponent grid <code>lambda_n = n^delta</code> with the paired penalty exponent <code>gamma = 2*(gamma.factor - delta + 1)</code>; selection by the weighted absolute mean difference (wAMD) with <code>|b_j|</code> weights, ATE (default) or ATT weighting; ties take the first minimum in documented grid order.</li>

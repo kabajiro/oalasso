@@ -2,6 +2,8 @@
 
 ## oalasso 1.0.0
 
+CRAN release: 2026-07-21
+
 Initial release, implementing the outcome-adaptive lasso of Shortreed &
 Ertefaie (2017), *Biometrics* 73(4):1111–1122, <doi:10.1111/biom.12679>,
 and the generalized outcome-adaptive lasso (GOAL) of Baldé, Yang &
