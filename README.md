@@ -1,10 +1,8 @@
 # oalasso <img src="man/figures/logo.png" align="right" height="139" alt="oalasso hex logo" />
 
-[![R-CMD-check](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml)
-<!-- Enable after CRAN acceptance (badge endpoint 404s for unpublished packages):
 [![CRAN status](https://www.r-pkg.org/badges/version/oalasso)](https://CRAN.R-project.org/package=oalasso)
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/oalasso)](https://CRAN.R-project.org/package=oalasso)
--->
+[![R-CMD-check](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kabajiro/oalasso/actions/workflows/R-CMD-check.yaml)
 
 **Outcome-adaptive lasso propensity scores — published methods, exactly.**
 
@@ -17,6 +15,10 @@ Fidelity is the package's identity. The solver is `glmnet` with an exact, KKT-ve
 ## Installation
 
 ```r
+# From CRAN
+install.packages("oalasso")
+
+# Development version
 # install.packages("remotes")
 remotes::install_github("kabajiro/oalasso")
 ```
@@ -51,7 +53,7 @@ If you use `oalasso`, please cite the methods it implements, and the package:
 
 > Baldé, I., Yang, Y. A., & Lefebvre, G. (2023). Reader reaction to "Outcome-adaptive lasso: Variable selection for causal inference" by Shortreed and Ertefaie (2017). *Biometrics*, 79(1), 514–520. doi:[10.1111/biom.13683](https://doi.org/10.1111/biom.13683) *(when `method = "goal"` is used)*
 
-> Kabata, D. (2026). oalasso: Outcome-Adaptive Lasso Propensity Scores. R package. https://github.com/kabajiro/oalasso (see `citation("oalasso")`)
+> Kabata, D. (2026). oalasso: Outcome-Adaptive Lasso Propensity Scores. R package version 1.0.0. https://CRAN.R-project.org/package=oalasso (see `citation("oalasso")`)
 
 ```bibtex
 @article{shortreed2017outcome,
